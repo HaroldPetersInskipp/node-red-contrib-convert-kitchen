@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('convert-kitchen',{
+        category: 'function',
+        color: '#26C6DA',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"convert-kitchen";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="lower-case">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="convert-kitchen">
+    <p>A Node-RED node to convert units of measurement for cooking</p>
+</script>
