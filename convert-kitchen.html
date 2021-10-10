@@ -4,10 +4,10 @@
         color: '#26C6DA',
         defaults: {
             name: {value:"",required:false},
-            value: {value:0, validate:RED.validators.number()},
+            value: {value:0, required:false},
             unit: {value:"",required:false},
             finalUnit: {value:"",required:false},
-            output: {value:"payload",required:true}
+            output: {value:"payload"}
         },
         inputs:1,
         outputs:1,
@@ -17,18 +17,41 @@
             return this.name||"convert-kitchen";
         },
         oneditprepare: function() {
-        
             $("#node-input-value").typedInput({
                 default: "num",
                 types: ["num"]
             });
             $("#node-input-unit").typedInput({
-                default: "str",
-                types: ["str"]
+                types: [{
+                    value: "unit",
+                    options: [
+                        { value: "gallon", label: "Gallon"},
+                        { value: "liter", label: "Liter"},
+                        { value: "quart", label: "Quart"},
+                        { value: "pint", label: "Pint"},
+                        { value: "cup", label: "Cup"},
+                        { value: "ounce", label: "Ounce"},
+                        { value: "tablespoon", label: "Tablespoon"},
+                        { value: "teaspoon", label: "Teaspoon"},
+                        { value: "milliliter", label: "Milliliter"}                
+                    ]
+                }]
             });
             $("#node-input-finalUnit").typedInput({
-                default: "str",
-                types: ["str"]
+                types: [{
+                    value: "finalUnit",
+                    options: [
+                        { value: "gallon", label: "Gallon"},
+                        { value: "liter", label: "Liter"},
+                        { value: "quart", label: "Quart"},
+                        { value: "pint", label: "Pint"},
+                        { value: "cup", label: "Cup"},
+                        { value: "ounce", label: "Ounce"},
+                        { value: "tablespoon", label: "Tablespoon"},
+                        { value: "teaspoon", label: "Teaspoon"},
+                        { value: "milliliter", label: "Milliliter"}                
+                    ]
+                }]
             });
         },
         oneditsave: function() {
@@ -41,17 +64,6 @@
         oneditcancel: function() {
             this.editor.destroy();
             delete this.editor;
-        },
-        oneditresize: function(size) {
-            var rows = $("#dialog-form>div:not(.node-text-editor-row)");
-            var height = $("#dialog-form").height();
-            for (var i=0; i<rows.size(); i++) {
-                height -= $(rows[i]).outerHeight(true);
-            }
-            var editorRow = $("#dialog-form>div.node-text-editor-row");
-            height -= (parseInt(editorRow.css("marginTop"))+parseInt(editorRow.css("marginBottom")));
-            $(".node-text-editor").css("height",height+"px");
-            this.editor.resize();
         }
     });
 </script>

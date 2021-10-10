@@ -203,7 +203,7 @@ module.exports = function(RED) {
             };
 
             // Return formatted object with results rounded to two decimal places
-            node.send({ "value": Math.round(finalValue*100)/100, "unit": msg.finalUnit});
+            node.send({ "payload": Math.round(finalValue*100)/100, "value": msg.value, "unit": msg.unit, "finalUnit": msg.finalUnit});
         });
     };
     RED.nodes.registerType("convert-kitchen",ConvertKitchenNode);
