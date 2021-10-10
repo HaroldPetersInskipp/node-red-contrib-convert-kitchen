@@ -7,20 +7,25 @@
         },
         inputs:1,
         outputs:1,
-        icon: "file.png",
+        icon: "swap.png",
         label: function() {
             return this.name||"convert-kitchen";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="lower-case">
+<script type="text/html" data-template-name="convert-kitchen">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="convert-kitchen">
-    <p>A Node-RED node to convert units of measurement for cooking</p>
+<script type="text/x-red" data-help-name="convert-kitchen">
+    <p>A Node-RED node to convert between units of measurement for cooking.</p>
+    <h3>Details</h3>
+    <p>This node expects the following three inputs: <b>"msg.value"</b>, <b>"msg.unit"</b>, and <b>"msg.finalUnit"</b>.</p>
+    <p><b>"msg.value"</b> must be a number.</p>
+    <p>Both <b>"msg.unit"</b> and <b>"msg.finalUnit"</b> must be strings, the following units are supported:</p>
+    <p><b>gallon</b>, <b>liter</b>, <b>quart</b>, <b>pint</b>, <b>cup</b>, <b>ounce</b>, <b>tablespoon</b>, <b>teaspoon</b>, and <b>milliliter</b>.</p>
 </script>

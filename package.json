@@ -25,7 +25,8 @@
     "oz",
     "fractions",
     "decimal",
-    "cooking"
+    "cooking",
+    "node-red"
   ],
   "node-red" : {
         "nodes": {

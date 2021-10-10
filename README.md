@@ -4,7 +4,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/LICENSE)
 
 ## node-red-contrib-convert-kitchen
-A simple Node-RED node to convert units of measurement for cooking.
+A simple Node-RED node to convert between units of measurement for cooking.
 
 
 
