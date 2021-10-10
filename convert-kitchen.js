@@ -1,10 +1,23 @@
 module.exports = function(RED) {
     function ConvertKitchenNode(config) {
         RED.nodes.createNode(this,config);
+        this.value = config.value;
+        this.unit = config.unit;
+        this.finalUnit = config.finalUnit;
         var node = this;
         node.on('input', function(msg) {
             
             let finalValue;
+            
+            if (!msg.value) {
+                msg.value = parseInt(node.value);
+            };
+            if (!msg.unit) {
+                msg.unit = node.unit;
+            };
+            if (!msg.finalUnit) {
+                msg.finalUnit = node.finalUnit;
+            };
 
             // Check input types and handle errors
             if (typeof (msg.value) !== 'number') {

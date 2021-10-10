@@ -3,13 +3,55 @@
         category: 'function',
         color: '#26C6DA',
         defaults: {
-            name: {value:""}
+            name: {value:"",required:false},
+            value: {value:0, validate:RED.validators.number()},
+            unit: {value:"",required:false},
+            finalUnit: {value:"",required:false},
+            output: {value:"payload",required:true}
         },
         inputs:1,
         outputs:1,
+        align: "right",
         icon: "swap.png",
         label: function() {
             return this.name||"convert-kitchen";
+        },
+        oneditprepare: function() {
+        
+            $("#node-input-value").typedInput({
+                default: "num",
+                types: ["num"]
+            });
+            $("#node-input-unit").typedInput({
+                default: "str",
+                types: ["str"]
+            });
+            $("#node-input-finalUnit").typedInput({
+                default: "str",
+                types: ["str"]
+            });
+        },
+        oneditsave: function() {
+            $("#node-input-value").val(this.editor.getValue());
+            $("#node-input-unit").val(this.editor.getValue());
+            $("#node-input-finalUnit").val(this.editor.getValue());
+            this.editor.destroy();
+            delete this.editor;
+        },
+        oneditcancel: function() {
+            this.editor.destroy();
+            delete this.editor;
+        },
+        oneditresize: function(size) {
+            var rows = $("#dialog-form>div:not(.node-text-editor-row)");
+            var height = $("#dialog-form").height();
+            for (var i=0; i<rows.size(); i++) {
+                height -= $(rows[i]).outerHeight(true);
+            }
+            var editorRow = $("#dialog-form>div.node-text-editor-row");
+            height -= (parseInt(editorRow.css("marginTop"))+parseInt(editorRow.css("marginBottom")));
+            $(".node-text-editor").css("height",height+"px");
+            this.editor.resize();
         }
     });
 </script>
@@ -18,6 +60,29 @@
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-value"><i class="fa fa-tag"></i> msg.value</label>
+        <input type="text" id="node-input-value" placeholder="e.g. 5/3 = 1.66">
+    </div>
+    <div class="form-row">
+        <label for="node-input-unit"><i class="fa fa-tag"></i> msg.unit</label>
+        <input type="text" id="node-input-unit" placeholder="Input unit">
+    </div>
+    <div class="form-row">
+        <label for="node-input-finalUnit"><i class="fa fa-tag"></i> msg.finalUnit</label>
+        <input type="text" id="node-input-finalUnit" placeholder="Output unit">
+    </div>
+    <div class="form-usage">
+      Usage:
+      <p>
+        <ul>
+          <li>This node expects the following three inputs: <b>"msg.value"</b>, <b>"msg.unit"</b>, and <b>"msg.finalUnit"</b>.</li>
+          <li><b>"msg.value"</b> must be a number.</li>
+          <li>Both <b>"msg.unit"</b> and <b>"msg.finalUnit"</b> must be strings, the following units are supported:</li>
+          <li><b>gallon</b>, <b>liter</b>, <b>quart</b>, <b>pint</b>, <b>cup</b>, <b>ounce</b>, <b>tablespoon</b>, <b>teaspoon</b>, and <b>milliliter</b>.</li>
+        </ul>
+      </p>
     </div>
 </script>
 

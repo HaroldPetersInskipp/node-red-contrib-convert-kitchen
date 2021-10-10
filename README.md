@@ -14,9 +14,6 @@ Install with the built in <b>Node-RED Palette manager</b> or using npm:
 npm install node-red-contrib-convert-kitchen
 ```
 
-### Example
-
-
 ### Help
 This documentation is also available in the help section of the node.
 
