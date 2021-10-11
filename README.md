@@ -30,4 +30,4 @@ Both <code>msg.unit</code> and <code>msg.finalUnit</code> must be strings, the f
 
 ### Bugs reports and feature requests
 
-Please report any issues or enhancement requests at <a href="https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/issues">GitHub</a>.
+Please report any issues or feature requests at <a href="https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/issues">GitHub</a>.
