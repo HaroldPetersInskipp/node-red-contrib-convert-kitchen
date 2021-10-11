@@ -10,7 +10,7 @@ module.exports = function(RED) {
             let finalValue;
             
             if (!msg.value) {
-                msg.value = parseInt(node.value);
+                msg.value = parseFloat(node.value);
             };
             if (!msg.unit) {
                 msg.unit = node.unit;
