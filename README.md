@@ -26,7 +26,7 @@ This documentation is also available in the help section of the node.
 This node expects the following three inputs:<code>msg.value</code><code>msg.unit</code><code>msg.finalUnit</code>
 
 <code>msg.value</code> must be a number.
-Both <code>msg.unit</code> and <code>msg.finalUnit</code> must be strings, the following units are supported:
+Both <code>msg.unit</code> and <code>msg.finalUnit</code> must be strings, the following US units are supported:
 <b>gallon</b>, <b>liter</b>, <b>quart</b>, <b>pint</b>, <b>cup</b>, <b>ounce</b>, <b>tablespoon</b>, <b>teaspoon</b>, and <b>milliliter</b>.
 
 ### Bugs reports and feature requests

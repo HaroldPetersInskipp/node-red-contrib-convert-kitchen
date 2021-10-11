@@ -50,6 +50,9 @@ module.exports = function(RED) {
             if (msg.unit === 'ounce') {
                 msg.unit = 'oz';
             };
+            if (msg.unit === 'litre') {
+                msg.unit = 'liter';
+            };
 
 
             // Convert input unit and value to finalUnit and finalValue
