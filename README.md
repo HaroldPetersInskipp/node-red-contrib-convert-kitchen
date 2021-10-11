@@ -18,7 +18,7 @@ npm install node-red-contrib-convert-kitchen
 [<img src="example.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/examples/convert-kitchen.json)
 This example can be imported from within Node-RED with:
 IMPORT > EXAMPLES > node-red-contrib-convert-kitchen
-[<img src="exampleDashboard.png">]
+[<img src="exampleDashboard.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/examples/convert-kitchen.json)
 
 ### Help
 This documentation is also available in the help section of the node.
