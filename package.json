@@ -33,7 +33,10 @@
             "convert-kitchen": "convert-kitchen.js"
         }
   },
-  "author": "HaroldPetersInskipp",
+  "author": {
+        "name": "Harold Peters Inskipp",
+        "email": "HaroldPetersInskipp@gmail.com"
+    },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/issues"
