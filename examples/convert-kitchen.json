@@ -70,12 +70,20 @@
                 "type": "text",
                 "required": false,
                 "rows": null
+            },
+            {
+                "label": "US or Imperial",
+                "value": "sys",
+                "type": "text",
+                "required": false,
+                "rows": null
             }
         ],
         "formValue": {
             "value": "",
             "unit": "",
-            "finalUnit": ""
+            "finalUnit": "",
+            "sys": ""
         },
         "payload": "",
         "submit": "submit",
@@ -96,7 +104,7 @@
         "type": "function",
         "z": "9833aa89b8775756",
         "name": "formating",
-        "func": "// handle strings and fractions as input, create fallback\nif (msg.payload.value.search(\"/\") !== -1) {\n    msg.payload.value = msg.payload.value.split(\"/\");\n    msg.payload.value = (msg.payload.value[0] / msg.payload.value[1]);\n    msg.payload.value = Math.round(msg.payload.value * 10000) / 10000;\n} else if (msg.payload.value === '') {\n    msg.payload.value = flow.get('value');\n} else {\n    msg.payload.value = parseFloat(msg.payload.value);\n    flow.set('value', msg.payload.value);\n};\nif (msg.payload.unit === '') {\n    msg.payload.unit = flow.get('unit');\n} else {\n    flow.set('unit', msg.payload.unit);\n};\nif (msg.payload.finalUnit === '') {\n    msg.payload.finalUnit = flow.get('finalUnit');\n} else {\n    flow.set('finalUnit', msg.payload.finalUnit);\n};\n\nreturn { \"value\": msg.payload.value, \"unit\": msg.payload.unit, \"finalUnit\": msg.payload.finalUnit };",
+        "func": "// handle strings and fractions as input, create fallback\nif (msg.payload.value.search(\"/\") !== -1) {\n    msg.payload.value = msg.payload.value.split(\"/\");\n    msg.payload.value = (msg.payload.value[0] / msg.payload.value[1]);\n    msg.payload.value = Math.round(msg.payload.value * 10000) / 10000;\n} else if (msg.payload.value === '') {\n    msg.payload.value = flow.get('value');\n} else {\n    msg.payload.value = parseFloat(msg.payload.value);\n    flow.set('value', msg.payload.value);\n};\nif (msg.payload.unit === '') {\n    msg.payload.unit = flow.get('unit');\n} else {\n    flow.set('unit', msg.payload.unit);\n};\nif (msg.payload.finalUnit === '') {\n    msg.payload.finalUnit = flow.get('finalUnit');\n} else {\n    flow.set('finalUnit', msg.payload.finalUnit);\n};\nif (msg.payload.sys === '') {\n    msg.payload.sys = flow.get('sys');\n} else {\n    flow.set('sys', msg.payload.sys);\n};\n\nreturn { \"value\": msg.payload.value, \"unit\": msg.payload.unit, \"finalUnit\": msg.payload.finalUnit, \"sys\": msg.payload.sys };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -167,9 +175,10 @@
         "type": "convert-kitchen",
         "z": "9833aa89b8775756",
         "name": "",
-        "value": "",
+        "value": "1",
         "unit": "gallon",
-        "finalUnit": "ounce",
+        "finalUnit": "gallon",
+        "sys": "us",
         "output": "payload",
         "x": 500,
         "y": 240,
@@ -178,7 +187,8 @@
                 "1b22265848933a02",
                 "682fccf598700343",
                 "f2c1f1d17655f71e",
-                "87dd3df17627d2ab"
+                "87dd3df17627d2ab",
+                "394ed36100d351de"
             ]
         ]
     },
@@ -207,7 +217,23 @@
         ]
     },
     {
-        "id": "67950a1982b15e69",
+        "id": "394ed36100d351de",
+        "type": "ui_text",
+        "z": "9833aa89b8775756",
+        "group": "dc5caea0185710de",
+        "order": 10,
+        "width": 3,
+        "height": 1,
+        "name": "system",
+        "label": "",
+        "format": "{{msg.sys}}",
+        "layout": "row-left",
+        "x": 740,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1c1f36b8178542e7",
         "type": "ui_spacer",
         "z": "9833aa89b8775756",
         "name": "spacer",
@@ -217,7 +243,7 @@
         "height": 1
     },
     {
-        "id": "8e5a8c1a223830eb",
+        "id": "8884b150cde027ea",
         "type": "ui_spacer",
         "z": "9833aa89b8775756",
         "name": "spacer",
@@ -227,12 +253,22 @@
         "height": 1
     },
     {
-        "id": "2e3a0f3377de8b42",
+        "id": "876d9a4a5c3148d8",
         "type": "ui_spacer",
         "z": "9833aa89b8775756",
         "name": "spacer",
         "group": "dc5caea0185710de",
         "order": 7,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "07f0e929e20cdd34",
+        "type": "ui_spacer",
+        "z": "9833aa89b8775756",
+        "name": "spacer",
+        "group": "dc5caea0185710de",
+        "order": 9,
         "width": 4,
         "height": 1
     },
