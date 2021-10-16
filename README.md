@@ -14,7 +14,8 @@ Install with the built in <b>Node-RED Palette manager</b> or using npm:
 npm install node-red-contrib-convert-kitchen
 ```
 
-### Example
+### Examples
+[<img src="exampleDialog.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen)
 [<img src="example.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/examples/convert-kitchen.json)
 This example can be imported from within Node-RED with:
 IMPORT > EXAMPLES > node-red-contrib-convert-kitchen
