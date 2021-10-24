@@ -4,17 +4,19 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/LICENSE)
 
 ## node-red-contrib-convert-kitchen
+
 A simple Node-RED node to convert between units of measurement for cooking.
 
 
-
 ### Quick Start
+
 Install with the built in <b>Node-RED Palette manager</b> or using npm:
 ```
 npm install node-red-contrib-convert-kitchen
 ```
 
 ### Examples
+
 [<img src="exampleDialog.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen)
 [<img src="example.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/examples/convert-kitchen.json)
 This example can be imported from within Node-RED with:
@@ -22,6 +24,7 @@ IMPORT > EXAMPLES > node-red-contrib-convert-kitchen
 [<img src="exampleDashboard.png">](https://github.com/HaroldPetersInskipp/node-red-contrib-convert-kitchen/blob/main/examples/convert-kitchen.json)
 
 ### Help
+
 This documentation is also available in the help section of the node.
 
 This node expects the following four inputs:<code>msg.sys</code> <code>msg.value</code> <code>msg.unit</code> <code>msg.finalUnit</code>
