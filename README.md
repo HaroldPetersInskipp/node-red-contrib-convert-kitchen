@@ -28,8 +28,8 @@ IMPORT > EXAMPLES > node-red-contrib-convert-kitchen
 
 This documentation is also available in the help section of the node.
 
-This node expects the following four inputs:<code>msg.sys</code> <code>msg.value</code> <code>msg.unit</code> <code>msg.finalUnit</code>
-If they are recieved, they will overwrite the values selected in the node's menu.
+This node expects the following four inputs:<code>msg.sys</code>, <code>msg.value</code>, <code>msg.unit</code>, and <code>msg.finalUnit</code>
+If they are received, they will overwrite the values selected in the node's menu.
 
 <code>msg.sys</code> must be the string 'us' or 'imperial'.
 <code>msg.value</code> must be a number.

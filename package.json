@@ -29,9 +29,13 @@
     "node-red"
   ],
   "node-red" : {
+        "version": ">=1.3.5",
         "nodes": {
             "convert-kitchen": "convert-kitchen.js"
         }
+  },
+  "engines": {
+    "node": ">=14.0.0"  
   },
   "author": {
         "name": "Harold Peters Inskipp",
